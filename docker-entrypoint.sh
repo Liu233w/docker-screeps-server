@@ -4,6 +4,7 @@ set -e
 function init_srv(){
 	echo "===== SETTING UP SCREEPS ====="
 	cp -ar /screeps-dist* /screeps
+	npx screeps init
 }
 
 function run_srv(){
