@@ -1,7 +1,7 @@
 FROM node:8.11.1-stretch
 ENV SCREEPS_VERSION 3.4.3
 WORKDIR /screeps
-RUN yarn add screeps@"$SCREEPS_VERSION" && npx screeps init
+RUN yarn add screeps@"$SCREEPS_VERSION"
 
 FROM node:8.11.1-stretch
 VOLUME /screeps
