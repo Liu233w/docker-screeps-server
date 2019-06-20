@@ -3,7 +3,7 @@ set -e
 
 function init_srv(){
 	echo "===== SETTING UP SCREEPS ====="
-	cp -avr /screeps-dist /screeps
+	cp -ar /screeps-dist* /screeps
 }
 
 function run_srv(){
