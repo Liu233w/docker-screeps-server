@@ -1,7 +1,7 @@
 FROM node:8.11.1-stretch
 ENV SCREEPS_VERSION 3.4.3
 WORKDIR /screeps
-RUN yarn add screeps@"$SCREEPS_VERSION"
+RUN yarn add screeps@"$SCREEPS_VERSION" && npx screeps init
 
 FROM node:8.11.1-stretch
 VOLUME /screeps
@@ -13,7 +13,7 @@ ENV DB_PATH=/screeps/db.json ASSET_DIR=/screeps/assets \
         DRIVER_MODULE="@screeps/driver"
 WORKDIR /screeps
 #RUN apk add --no-cache git
-COPY --from=0 /screeps /screeps
+COPY --from=0 /screeps /screeps-dist
 
 COPY "docker-entrypoint.sh" /
 ENTRYPOINT ["/docker-entrypoint.sh"]
